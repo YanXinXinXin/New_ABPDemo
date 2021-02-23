@@ -1,0 +1,51 @@
+﻿@page
+@using Acme.BookStore.Localization
+@using Acme.BookStore.Web.Pages.Authors
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@model Acme.BookStore.Web.Pages.Test2Model
+
+@{
+    Layout = null;
+}
+<script src="../Pages/Users/jquery.js"></script>
+<script>
+    function Add() {
+        alert("哈哈哈");
+        $.ajax({
+            url: '/Home/Default2/',
+            type: 'Post',
+            data: {
+                //arry: $('.WorkPlanTransfer').val()
+            },
+            success: function (data) {
+                alert(data);
+            }
+        })
+    }
+</script>
+<h1>Test2</h1>
+
+<h4>Author</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <abp-modal-body>
+                <abp-input asp-for="Author.Name" />
+                <abp-input asp-for="Author.BirthDate" />
+                <abp-input asp-for="Author.ShortBio" />
+            </abp-modal-body>
+           @*<abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>*@
+            <button onclick="Add()">添加</button>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

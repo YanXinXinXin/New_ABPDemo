@@ -1,0 +1,25 @@
+﻿@{
+    //ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+@model List< Acme.BookStore.Authors.AuthorDto>
+@*<div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>*@
+
+<table class="table table-hover table-success">
+    <tr>
+        <th>姓名</th>
+        <th>出生日期</th>
+    </tr>
+    @{ 
+        <tr>
+            @foreach (var author in Model)
+            {
+                <td>@author.Name</td>
+                <td>@author.ShortBio</td>
+            }
+        </tr>
+    }
+</table>

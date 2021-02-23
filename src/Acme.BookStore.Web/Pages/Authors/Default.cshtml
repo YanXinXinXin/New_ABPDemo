@@ -1,0 +1,37 @@
+﻿@page
+@using Acme.BookStore.Authors
+@model Acme.BookStore.Web.Pages.Authors.DefaultModel
+@{
+    Layout = null;
+}
+@using Acme.BookStore.Web.Pages.Authors
+<from>
+    @*Volo.Abp.Application.Dtos.PagedResultDto`1[Acme.BookStore.Authors.AuthorDto]*@
+
+</from>
+
+<abp-card-body>
+    <table class="table table-hover table-success">
+        <tr>
+            <th>姓名</th>
+            <th>出生日期</th>
+
+        </tr>
+        <tr>
+
+
+            @*@foreach (var item in Model.Author)
+                {
+                <td>@item.Name</td>
+                <td>@item.BirthDate</td>
+                }*@
+
+
+            @*<td>@Model.Author.Name</td>
+                <td>@Model.Author.BirthDate</td>*@
+        </tr>
+    </table>
+    <abp-table striped-rows="true" id="BooksTable"></abp-table>
+</abp-card-body>
+
+

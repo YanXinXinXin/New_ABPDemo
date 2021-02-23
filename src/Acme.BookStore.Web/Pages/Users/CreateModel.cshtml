@@ -1,0 +1,273 @@
+﻿@page
+@using Acme.BookStore.Localization
+@using Acme.BookStore.Web.Pages.Authors
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@model Acme.BookStore.Web.Pages.Users.CreateModelModel
+@{
+    Layout = null;
+}
+<style>
+    * {
+        font-size: 12px;
+    }
+
+
+    table {
+        height: 50px;
+        width: 1180px;
+        table-layout: fixed;
+        word-break: break-all;
+    }
+
+    .xing {
+        border-right: 0;
+    }
+
+    .gangwei {
+        border-right: 0;
+        border-left: 0;
+    }
+
+    .zhuguan {
+        border-right: 0;
+        border-left: 0;
+    }
+
+    .ri {
+        margin-left: 30px;
+    }
+
+
+    .tianbao {
+        border-left: 0;
+    }
+
+    .one td {
+        text-align: center
+    }
+
+
+
+    .yudu {
+        line-height: auto;
+    }
+
+    .juzhong {
+        text-align: center
+    }
+/*
+    input {
+        border: 0;
+        outline: none;
+    }*/
+</style>
+
+<form asp-page="/Users/CreateModel" >
+    <table border="1" cellspacing="0" contentEditable="true" id="1">
+        <tr>
+            <th colspan=" 14"><span>_</span>年<span>_</span>月工作计划考核表</th>
+        </tr>
+        <tr>
+            <td colspan="3" class="xing"><abp-input asp-for="StaffUser.UserName" /></td>
+            <td colspan="4" class="gangwei"><abp-input asp-for="StaffUser.GanWei" /></td>
+            <td colspan="3" class="zhuguan"><abp-input asp-for="StaffUser.Supervisor" /></td>
+            <td colspan="4" class="tianbao">
+                <span>填报时间:</span>
+                <span class="ri">年</span>
+                <span class="ri">月</span>
+                <span class="ri">日</span>
+            </td>
+
+
+        </tr>
+        <tr class="one"  >
+            <td></td>
+            <td colspan="7" class="disan">月度工作计划</td>
+            <td colspan="6" class="disan">月度考核情况</td>
+        </tr>
+        <tr class="one"  >
+            <td>序号</td>
+            <td>评分项与比重</td>
+            <td>分值</td>
+            <td>工作计划内容</td>
+            <td>工作计划推进移交</td>
+            <td>拟完成时间</td>
+            <td>任务分值</td>
+            <td>拟完成目标</td>
+            <td>实际完成情况，尽可能详细、数据化</td>
+            <td>工作任务完成率</td>
+            <td>实际完成时间</td>
+            <td>自评分</td>
+            <td>上级审核目标达成情况、日常工作开展情况</td>
+            <td>上级评分</td>
+        </tr>
+        <tbody id="1">
+            <tr class="one">
+                <td rowspan="99"  >1</td>
+                <td rowspan="99"  >工作成果与质量（55%）</td>
+                <td rowspan="99"  >55</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+            <tr class="one">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="one">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="one">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+
+        </tbody>
+        <tr class="one">
+            <td rowspan="2"  >2</td>
+            <td rowspan="2"  >临时性工作完成情况（5%）</td>
+            <td rowspan="2"  >5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="one">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="one">
+            <td  >4</td>
+            <td  >日常工作表现（20%）</td>
+            <td  >20</td>
+            <td colspan="5"  >日常工作开展情况及同事间协同配合等情况</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="one">
+            <td  >5</td>
+            <td  >日常行为规范（20%）</td>
+            <td  >20</td>
+            <td   colspan="5">出勤情况、日/周/月报提交情况、各类表格上交及时员工手册约定日常行为规范等</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="one">
+            <td  >6</td>
+            <td  >减分</td>
+            <td  ></td>
+            <td   colspan="5">根据被投诉情况、违纪情况进行减分</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="one">
+            <td  >7</td>
+            <td  >加分</td>
+            <td  ></td>
+            <td   colspan="5">根据收到的表扬和对公司做出的特殊贡献情况酌情加分</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="one">
+            <td  >8</td>
+            <td   colspan="13">总分</td>
+        </tr>
+        <tr>
+            <td colspan="4">员工本人签字：</td>
+            <td colspan="3"   class="juzhong">温泉</td>
+            <td colspan="1"  >上级签字</td>
+            <td colspan="6"></td>
+        </tr>
+        <tr>
+            <td colspan="14"  >
+                <p>评分标准:</p>
+                <p>1.工作任务完成率为100%且在计划完成时间内完成，该项得分为满分及以上分值；</p>
+                <p>2.工作任务完成率即该项得分的得分率； 3.工作完成率为100%但未在规定时间内完成的需酌情扣分；</p>
+                <p>4.异常考勤扣分细则：普通迟到、早退（15分钟内），一次扣2分，严重迟到、早退（超过15分钟），一次扣5分，依次累计。脱岗扣10分，旷工当月绩效为0分。</p>
+                <p>
+                    5.请假扣分细则：公司规定享有的带薪假（详见福利制度）不扣分，事假酌情扣分，1-2天扣2分，3天扣5分，4-5天扣10分，5-10天扣20分，10天以上扣30分。（病假前3天不扣分，超过3天部分按以上规定扣相应绩效分；未毕业实习生毕业前夕给与5天回校办理毕业手续事假，超过5天部分按以上规定扣取相应绩效分。）
+                </p>
+                <p>
+                    6.报表未按时提交扣分细则：云之家日/周/月报每月有3次缓交机会，每超过一次扣2分；每未交一次扣3分，超过5次扣20分。公司或部门规定的其他报表，每缓交一天扣1分，如销售漏斗表、绩效表、工作计划表、总结表等。
+                </p>
+                <p>备注：1.本表由员工如实填写，部门负责人审核，作为员工月度考核参考依据；</p>
+                <p>2.本月工作考核表和下月工作计划，员工需在每月的最后一天前完成两份表格填写，提交部门负责人审核。部门负责人审核完成，于次月3日前提交此表及至综合后勤服务部存档；</p>
+                <p> 3.本表格必须按时按要求提交，迟交一天扣1分，逾期5天以上及拒不提交等情节严重者暂停发放当月工资。</p>
+            </td>
+        </tr>
+    </table>
+    <button onclick="add()">添加</button>
+    <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+
+</form>

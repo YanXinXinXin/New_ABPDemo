@@ -1,0 +1,33 @@
+﻿
+@{
+    //Layout = null;
+    ViewData["Title"] = "Default";
+}
+<script src="../Pages/Users/jquery.js"></script>
+
+<script>
+    function BtnChaXun() {
+        console.log($('.WorkPlanTransfer').val());
+        $.ajax({
+            type: 'post',
+            url: '/Home/Default',
+            data:
+            {
+                name: $('.WorkPlanTransfer').val()
+            },
+        }).done(() => {
+            alert("添加成功");
+        })
+            .fail(() => {
+
+                console.log("失败了");
+            });
+    }
+</script>
+<h1>Default</h1>
+<input type="text" name="WorkPlanTransfer" class="WorkPlanTransfer" value="" />
+<input type="button" name="BtnInquery" value="查  询" onclick="BtnChaXun()" />
+
+
+
+
