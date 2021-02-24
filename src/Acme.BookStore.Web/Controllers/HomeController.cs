@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using static Acme.BookStore.Web.Pages.Authors.CreateModalModel;
@@ -22,30 +23,30 @@ namespace Acme.BookStore.Web.Controllers
         }
         [HttpGet]
         public async Task<IActionResult> Index(GetAuthorListDto input)
-        { 
-    //        < script src = "../Pages/Users/jquery.js" ></ script >
- 
-    // < script >
-    //     function BtnChaXun() {
-    //            console.log($('.WorkPlanTransfer').val());
-    //        $.ajax({
-    //            type: 'post',
-    //            url: '/Home/Default2',
-    //            data:
-    //                {
-    //                name: $('.WorkPlanTransfer').val()
-    //            } ,
-    //        }).done(() => {
-    //                alert("添加成功");
+        {
+            //        < script src = "../Pages/Users/jquery.js" ></ script >
 
-    //            })
-    //         .fail(() => {
+            // < script >
+            //     function BtnChaXun() {
+            //            console.log($('.WorkPlanTransfer').val());
+            //        $.ajax({
+            //            type: 'post',
+            //            url: '/Home/Default2',
+            //            data:
+            //                {
+            //                name: $('.WorkPlanTransfer').val()
+            //            } ,
+            //        }).done(() => {
+            //                alert("添加成功");
 
-    //             console.log("失败了");
-    //         });
-    //        }
+            //            })
+            //         .fail(() => {
 
-    //</ script >
+            //             console.log("失败了");
+            //         });
+            //        }
+
+            //</ script >
 
 
             return View(await _authorAppService.GetListAuthorAsync(input));
@@ -58,15 +59,22 @@ namespace Acme.BookStore.Web.Controllers
         }
         [HttpGet]
         public async Task<IActionResult> Default() {
-            
-            return View();
-        }
-        [HttpPost]
-        public async Task<IActionResult> Default(string name)
-        {
 
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> Default(StudentModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var data = model;
+            }
+
+            return View();
+        }
+
+
+
 
         [HttpPost]
         public async Task<IActionResult> Default2(string name)
@@ -115,19 +123,24 @@ namespace Acme.BookStore.Web.Controllers
         public List<AuthorDto> Test() {
             var rng = new Random();
             return Enumerable.Range(1, 5)
-                .Select(s=> new AuthorDto
-            {
-                Id = Guid.NewGuid(), Name = "画画", BirthDate = DateTime.Now.AddDays(1),
-                ShortBio = "132"
+                .Select(s => new AuthorDto
+                {
+                    Id = Guid.NewGuid(), Name = "画画", BirthDate = DateTime.Now.AddDays(1),
+                    ShortBio = "132"
 
-            }).ToList();
+                }).ToList();
         }
-       
+
         [HttpGet]
         public IActionResult Test2()
         {
 
             return View("Test2");
+        }
+        public class StudentModel{
+            [Required]
+            public string StudentName { get; set; }
+
         }
     }
 }

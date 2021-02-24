@@ -10,7 +10,7 @@ namespace Acme.BookStore.MonthPlans
 {
       public class MonthlPlan: FullAuditedAggregateRoot<Guid>
     {
-        public Guid StaffUserId { get; set; }
+        public Guid? StaffUserId { get; set; }
         /// <summary>
         /// 工作计划内容
         /// </summary>
@@ -31,9 +31,10 @@ namespace Acme.BookStore.MonthPlans
         /// 拟完成目标
         /// </summary>
         public string ProposedGoal { get; set; }
-        public int Year { get; set; }
-        public int Month { get; set; }
-        public int Day { get; set; }
+
+        //public int Year { get; set; }
+        //public int Month { get; set; }
+        //public int Day { get; set; }
         /// <summary>
         /// 实际完成情况
         /// </summary>
@@ -67,14 +68,13 @@ namespace Acme.BookStore.MonthPlans
         {
             
         }
-        internal MonthlPlan(Guid id, [CanBeNull] string workPlanContent, [CanBeNull] string workPlanTransfer, [CanBeNull] string proposedCompletionTime,
-           [CanBeNull] string taskScore, [CanBeNull] string proposedGoal, int year, int month, int day,
-          [CanBeNull] string actualCompletion , [CanBeNull] string taskCompletionRate , [CanBeNull] string actualCompletionTime, [CanBeNull] string selfRating,
-           [CanBeNull] string  achievementOfSuperiorReviewGoals , [CanBeNull] string superiorScore
-            ) : base(id)
+        internal MonthlPlan(Guid id, [NotNull] string workPlanContent, [NotNull] string workPlanTransfer, [NotNull] string proposedCompletionTime,
+           [NotNull] string taskScore, [NotNull] string proposedGoal,/* int year, int month, int day,*/
+          [CanBeNull] string actualCompletion, [CanBeNull] string taskCompletionRate, [CanBeNull] string actualCompletionTime, [CanBeNull] string selfRating,
+           [CanBeNull] string achievementOfSuperiorReviewGoals, [CanBeNull] string superiorScore) : base(id)
         {
             WorkPlanContent = workPlanContent; WorkPlanTransfer = workPlanTransfer; ProposedCompletionTime = proposedCompletionTime;
-            TaskScore = taskScore; ProposedGoal = proposedGoal; Year = year; Month = month; Day = day;
+            TaskScore = taskScore; ProposedGoal = proposedGoal; /*Year = year; Month = month; Day = day;*/
             ActualCompletion = actualCompletion; TaskCompletionRate = taskCompletionRate; ActualCompletionTime = actualCompletionTime;
             SelfRating = selfRating; AchievementOfSuperiorReviewGoals = achievementOfSuperiorReviewGoals; SuperiorScore = superiorScore;
         }

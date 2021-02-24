@@ -29,8 +29,12 @@ namespace Acme.BookStore.Web.Pages.Users
         }
         public async Task<IActionResult> OnPostAsync()
         {
-           var User=ObjectMapper.Map<CreateStaffUserViewModel, CreateStaffUserDto>(StaffUser);
-            await _staffUserService.CreateUser(User);
+            if (ModelState.IsValid)
+            {
+                var User = ObjectMapper.Map<CreateStaffUserViewModel, CreateStaffUserDto>(StaffUser);
+                await _staffUserService.CreateUser(User);
+                
+            }
             return NoContent();
 
         }

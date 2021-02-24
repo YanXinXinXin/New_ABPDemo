@@ -1,19 +1,18 @@
 ﻿
 @{
-    //Layout = null;
     ViewData["Title"] = "Default";
 }
 <script src="../Pages/Users/jquery.js"></script>
 
 <script>
     function BtnChaXun() {
-        console.log($('.WorkPlanTransfer').val());
+        console.log($('.StudentName').val());
         $.ajax({
             type: 'post',
             url: '/Home/Default',
             data:
             {
-                name: $('.WorkPlanTransfer').val()
+                name: $('.StudentName').val()
             },
         }).done(() => {
             alert("添加成功");
@@ -25,9 +24,10 @@
     }
 </script>
 <h1>Default</h1>
-<input type="text" name="WorkPlanTransfer" class="WorkPlanTransfer" value="" />
-<input type="button" name="BtnInquery" value="查  询" onclick="BtnChaXun()" />
-
-
+<form  >
+    <input type="text" name="StudentName" class="StudentName" value="" />
+    @*<input type="submit" name="BtnInquery" value="查  询" onclick="BtnChaXun()" />*@
+    <button name="BtnInquery"  onclick="BtnChaXun()">查询</button>
+</form>
 
 

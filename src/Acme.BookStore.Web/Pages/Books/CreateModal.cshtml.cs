@@ -13,7 +13,7 @@ namespace Acme.BookStore.Web.Pages.Books
 {
     public class CreateModalModel : BookStorePageModel
     {
-        [BindProperty]
+        [BindProperty]  //[BindProperty]特性将post请求数据绑定到该属性。
         public CreateBookViewModel Book { get; set; }
 
         public List<SelectListItem> Authors { get; set; }

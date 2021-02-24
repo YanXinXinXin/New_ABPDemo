@@ -1,9 +1,11 @@
-﻿using JetBrains.Annotations;
+﻿using Acme.BookStore.Authors;
+using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Volo.Abp;
 using Volo.Abp.Domain.Services;
 
 namespace Acme.BookStore.MonthPlans
@@ -17,14 +19,32 @@ namespace Acme.BookStore.MonthPlans
             _monthPlanRepository = monthPlanRepository;
         }
         public  MonthlPlan CreateAsync(
-          [CanBeNull] string workPlanContent, [CanBeNull] string workPlanTransfer, [CanBeNull] string proposedCompletionTime,
-           [CanBeNull] string taskScore, [CanBeNull] string proposedGoal, int year, int month, int day,
+          [NotNull] string workPlanContent, [NotNull] string workPlanTransfer, [NotNull] string proposedCompletionTime,
+           [NotNull] string taskScore, [NotNull] string proposedGoal, /*int year, int month, int day,*/
           [CanBeNull] string actualCompletion, [CanBeNull] string taskCompletionRate, [CanBeNull] string actualCompletionTime, [CanBeNull] string selfRating,
            [CanBeNull] string achievementOfSuperiorReviewGoals, [CanBeNull] string superiorScore )
         {
             return new MonthlPlan(GuidGenerator.Create(), workPlanContent, workPlanTransfer, proposedCompletionTime, taskScore
-               , proposedGoal, year, month, day, actualCompletion, taskCompletionRate, actualCompletionTime,
-               selfRating, achievementOfSuperiorReviewGoals, superiorScore);
+           , proposedGoal,/* year, month, day,*/ actualCompletion, taskCompletionRate, actualCompletionTime,
+           selfRating, achievementOfSuperiorReviewGoals, superiorScore);
+            //if (string.IsNullOrWhiteSpace(workPlanContent) || string.IsNullOrWhiteSpace(workPlanTransfer) ||
+            //    string.IsNullOrWhiteSpace(proposedCompletionTime) ||  string.IsNullOrWhiteSpace(taskScore) ||
+            //    string.IsNullOrWhiteSpace(proposedGoal))
+            //{
+            //    //throw new AuthorAlreadyExistsException("参数异常");
+            //    return null;
+            //}
+            //else
+            //{
+            //    return new MonthlPlan(GuidGenerator.Create(), workPlanContent, workPlanTransfer, proposedCompletionTime, taskScore
+            //  , proposedGoal,/* year, month, day,*/ actualCompletion, taskCompletionRate, actualCompletionTime,
+            //  selfRating, achievementOfSuperiorReviewGoals, superiorScore);
+          // }
+          
+            //Check.NotNullOrWhiteSpace(workPlanContent, nameof(workPlanContent));
+
+
+           
         }
     }
 }

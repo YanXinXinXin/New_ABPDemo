@@ -51,8 +51,9 @@
         width: auto;
     }
 
-        .one td input {
+        .ka td input {
             border: 1px solid red;
+
         }
 
 
@@ -79,8 +80,8 @@
         <tr>
             <th colspan=" 14"><span>_</span>年<span>_</span>月工作计划考核表</th>
         </tr>
-        <tr>
-            <td colspan="3" class="xing">姓名</td>
+        <tr class="wa">
+            <td colspan="3" class="xing">姓名<input type="text" name="StaffUserName" class="StaffUserName" /></td>
             <td colspan="4" class="gangwei">岗位</td>
             <td colspan="3" class="zhuguan">主管人</td>
             <td colspan="4" class="tianbao">
@@ -118,88 +119,123 @@
         <tbody id="1">
 
             <tr class="ka">
+                <td rowspan="99">1</td>
+                <td rowspan="99">工作成果与质量（55%）</td>
+                <td rowspan="99">55</td>
+                <td name="WorkPlanContent" class="WorkPlanContent"></td>
+                <td name="WorkPlanTransfer" class="WorkPlanTransfer"></td>
+                <td name="ProposedCompletionTime" class="ProposedCompletionTime"></td>
+                <td name="TaskScore" class="TaskScore"></td>
+                <td name="ProposedGoal" class="ProposedGoal"></td>
+                <td name="ActualCompletion" class="ActualCompletion"></td>
+                <td name="TaskCompletionRate" class="TaskCompletionRate"></td>
+                <td name="ActualCompletionTime" class="ActualCompletionTime"></td>
+                <td name="SelfRating" class="SelfRating"></td>
+                <td name="AchievementOfSuperiorReviewGoals" class="AchievementOfSuperiorReviewGoals"></td>
+                <td name="SuperiorScore" class="SuperiorScore"></td>
+            </tr>
+
+            @*<tr class="ka">
+                <td rowspan="99">1</td>
+                <td rowspan="99">工作成果与质量（55%）</td>
+                <td rowspan="99">55</td>
                 <td><input type="text" name="WorkPlanContent" class="WorkPlanContent" /></td>
                 <td><input type="text" name="WorkPlanTransfer" class="WorkPlanTransfer" /></td>
                 <td><input type="text" name="ProposedCompletionTime" class="ProposedCompletionTime" /></td>
                 <td><input type="text" name="TaskScore" class="TaskScore" /></td>
                 <td><input type="text" name="ProposedGoal" class="ProposedGoal" /></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><input type="text" name="ActualCompletion" value="" /></td>
+                <td><input type="text" name="TaskCompletionRate" value="" /></td>
+                <td><input type="text" name="ActualCompletionTime" value="" /></td>
+                <td><input type="text" name="SelfRating" value="" /></td>
+                <td><input type="text" name="AchievementOfSuperiorReviewGoals" value="" /></td>
+                <td><input type="text" name="SuperiorScore" value="" /></td>
+            </tr>*@
+            <tr class="ka">
+                <td name="WorkPlanContent" class="WorkPlanContent"></td>
+                <td name="WorkPlanTransfer" class="WorkPlanTransfer"></td>
+                <td name="ProposedCompletionTime" class="ProposedCompletionTime"></td>
+                <td name="TaskScore" class="TaskScore"></td>
+                <td name="ProposedGoal" class="ProposedGoal"></td>
+                <td name="ActualCompletion" class="ActualCompletion"></td>
+                <td name="TaskCompletionRate" class="TaskCompletionRate"></td>
+                <td name="ActualCompletionTime" class="ActualCompletionTime"></td>
+                <td name="SelfRating" class="SelfRating"></td>
+                <td name="AchievementOfSuperiorReviewGoals" class="AchievementOfSuperiorReviewGoals"></td>
+                <td name="SuperiorScore" class="SuperiorScore"></td>
             </tr>
             <tr class="ka">
-                <td><input type="text" name="WorkPlanContent" class="WorkPlanContent" /></td>
-                <td><input type="text" name="WorkPlanTransfer" class="WorkPlanTransfer" /></td>
-                <td><input type="text" name="ProposedCompletionTime" class="ProposedCompletionTime" /></td>
-                <td><input type="text" name="TaskScore" class="TaskScore" /></td>
-                <td><input type="text" name="ProposedGoal" class="ProposedGoal" /></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+
+                <td name="WorkPlanContent" class="WorkPlanContent"></td>
+                <td name="WorkPlanTransfer" class="WorkPlanTransfer"></td>
+                <td name="ProposedCompletionTime" class="ProposedCompletionTime"></td>
+                <td name="TaskScore" class="TaskScore"></td>
+                <td name="ProposedGoal" class="ProposedGoal"></td>
+                <td name="ActualCompletion" class="ActualCompletion"></td>
+                <td name="TaskCompletionRate" class="TaskCompletionRate"></td>
+                <td name="ActualCompletionTime" class="ActualCompletionTime"></td>
+                <td name="SelfRating" class="SelfRating"></td>
+                <td name="AchievementOfSuperiorReviewGoals" class="AchievementOfSuperiorReviewGoals"></td>
+                <td name="SuperiorScore" class="SuperiorScore"></td>
             </tr>
             <tr class="ka">
-                <td><input type="text" name="WorkPlanContent" class="WorkPlanContent" /></td>
-                <td><input type="text" name="WorkPlanTransfer" class="WorkPlanTransfer" /></td>
-                <td><input type="text" name="ProposedCompletionTime" class="ProposedCompletionTime" /></td>
-                <td><input type="text" name="TaskScore" class="TaskScore" /></td>
-                <td><input type="text" name="ProposedGoal" class="ProposedGoal" /></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr class="ka">
-                <td><input type="text" name="WorkPlanContent" class="WorkPlanContent" /></td>
-                <td><input type="text" name="WorkPlanTransfer" class="WorkPlanTransfer" /></td>
-                <td><input type="text" name="ProposedCompletionTime" class="ProposedCompletionTime" /></td>
-                <td><input type="text" name="TaskScore" class="TaskScore" /></td>
-                <td><input type="text" name="ProposedGoal" class="ProposedGoal" /></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+
+                <td name="WorkPlanContent" class="WorkPlanContent"></td>
+                <td name="WorkPlanTransfer" class="WorkPlanTransfer"></td>
+                <td name="ProposedCompletionTime" class="ProposedCompletionTime"></td>
+                <td name="TaskScore" class="TaskScore"></td>
+                <td name="ProposedGoal" class="ProposedGoal"></td>
+                <td name="ActualCompletion" class="ActualCompletion"></td>
+                <td name="TaskCompletionRate" class="TaskCompletionRate"></td>
+                <td name="ActualCompletionTime" class="ActualCompletionTime"></td>
+                <td name="SelfRating" class="SelfRating"></td>
+                <td name="AchievementOfSuperiorReviewGoals" class="AchievementOfSuperiorReviewGoals"></td>
+                <td name="SuperiorScore" class="SuperiorScore"></td>
             </tr>
 
 
         </tbody>
-        <tr class="one">
-            <td rowspan="2">2</td>
-            <td rowspan="2">临时性工作完成情况（5%）</td>
-            <td rowspan="2">5</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+        <tr class="ka">
+            <td rowspan="3">2</td>
+            <td rowspan="3">临时性工作完成情况（5%）</td>
+            <td rowspan="3">5</td>
+            <td name="WorkPlanContent" class="WorkPlanContent"></td>
+            <td name="WorkPlanTransfer" class="WorkPlanTransfer"></td>
+            <td name="ProposedCompletionTime" class="ProposedCompletionTime"></td>
+            <td name="TaskScore" class="TaskScore"></td>
+            <td name="ProposedGoal" class="ProposedGoal"></td>
+            <td name="ActualCompletion" class="ActualCompletion"></td>
+            <td name="TaskCompletionRate" class="TaskCompletionRate"></td>
+            <td name="ActualCompletionTime" class="ActualCompletionTime"></td>
+            <td name="SelfRating" class="SelfRating"></td>
+            <td name="AchievementOfSuperiorReviewGoals" class="AchievementOfSuperiorReviewGoals"></td>
+            <td name="SuperiorScore" class="SuperiorScore"></td>
         </tr>
-        <tr class="one">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+        <tr class="ka">
+            <td name="WorkPlanContent" class="WorkPlanContent"></td>
+            <td name="WorkPlanTransfer" class="WorkPlanTransfer"></td>
+            <td name="ProposedCompletionTime" class="ProposedCompletionTime"></td>
+            <td name="TaskScore" class="TaskScore"></td>
+            <td name="ProposedGoal" class="ProposedGoal"></td>
+            <td name="ActualCompletion" class="ActualCompletion"></td>
+            <td name="TaskCompletionRate" class="TaskCompletionRate"></td>
+            <td name="ActualCompletionTime" class="ActualCompletionTime"></td>
+            <td name="SelfRating" class="SelfRating"></td>
+            <td name="AchievementOfSuperiorReviewGoals" class="AchievementOfSuperiorReviewGoals"></td>
+            <td name="SuperiorScore" class="SuperiorScore"></td>
+        </tr>
+        <tr class="ka">
+            <td name="WorkPlanContent" class="WorkPlanContent"></td>
+            <td name="WorkPlanTransfer" class="WorkPlanTransfer"></td>
+            <td name="ProposedCompletionTime" class="ProposedCompletionTime"></td>
+            <td name="TaskScore" class="TaskScore"></td>
+            <td name="ProposedGoal" class="ProposedGoal"></td>
+            <td name="ActualCompletion" class="ActualCompletion"></td>
+            <td name="TaskCompletionRate" class="TaskCompletionRate"></td>
+            <td name="ActualCompletionTime" class="ActualCompletionTime"></td>
+            <td name="SelfRating" class="SelfRating"></td>
+            <td name="AchievementOfSuperiorReviewGoals" class="AchievementOfSuperiorReviewGoals"></td>
+            <td name="SuperiorScore" class="SuperiorScore"></td>
         </tr>
         <tr class="one">
             <td>4</td>
@@ -287,17 +323,42 @@
 <script>
     function Add() {
         let a = [];
+        var name = $('.UserName').val();
+        let items = {}
+
+        for (var i = 0; i < $('.wa').length; i++) {
+            items[$('.wa').find('input').eq(i)[0].name] = $('.wa').eq(i).find('input').val();
+           
+        
+          //  console.log($('.wa').find('input').eq(i)[0].name]);
+        }
+       // console.log(items);
+       // console.log($('.ka').length);
         for (let i = 0; i < $('.ka').length; i++) {
             let item = {}
-            for (let j = 0; j < $('.ka').eq(i).find('input').length; j++) {
-                //console.info($('.ka').eq(i).find('input').eq(j).val())
-                item[$('.ka').eq(i).find('input').eq(j)[0].name] = $('.ka').eq(i).find('input').eq(j).val();
+            for (let j = 0; j < $('.ka').eq(i).find('td').length; j++) {
+              
+              //  console.log($('.wa').eq(i).find('input').eq(j)[0].name);
+                //console.info($('.ka').eq(i).find('td').eq(j).val())
+                //console.info($('.ka').eq(i).find('input').eq(j)[0].name)
+                //console.log($('.ka').eq(i).find('td').eq(j).text());
+                item[$('.ka').eq(i).find('td').eq(j)[0].className] = $('.ka').eq(i).find('td').eq(j).text();
+                item[$('.wa').find('input').eq(0)[0].name] = $('.wa').eq(0).find('input').val();
+                //console.log($('.wa').eq(0).find('input').val());
+                //console.log($('.wa').find('input').eq(0)[0].name);
+                //console.log($('.ka').eq(i).find('td').eq(j).text());
+                //console.log(item[$('.ka').eq(i).find('td').eq(j)[0].className]);
+             
             }
+            //console.log($('.wa').eq(i).find('input').eq(j).val());
+            //  console.info(item);
+            // console.log(items);
             a.push(item)
+           
         };
        //debugger
-        // console.info(a);
-       console.log(JSON.stringify(a));
+         console.info(a);
+      // console.log(JSON.stringify(a));
         //contentType: 'application/json;charset=utf-8',
         $.ajax({
             type: 'post',
@@ -306,7 +367,7 @@
             headers: {
                 "XSRF-TOKEN": $('input:hidden[name="__RequestVerificationToken"]').val()
             },
-            data:JSON.stringify(a)
+            data: JSON.stringify(a)
         }).done(function (e) {
            // console.log(e);
         })

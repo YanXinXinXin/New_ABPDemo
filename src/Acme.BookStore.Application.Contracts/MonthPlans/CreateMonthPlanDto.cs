@@ -8,7 +8,9 @@ namespace Acme.BookStore.MonthPlans
 {
     public class CreateMonthPlanDto
     {
-        public Guid StaffUserId { get; set; }
+        public string StaffUserName { get; set; }
+
+        public Guid? StaffUserId { get; set; }
         /// <summary>
         /// 工作计划内容
         /// </summary>

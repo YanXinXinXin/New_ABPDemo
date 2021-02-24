@@ -1,4 +1,5 @@
 ﻿
+using Acme.BookStore.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,20 +14,25 @@ namespace Acme.BookStore.MonthPlans
     {
         private readonly IMonthPlanRepository _monthPlanRepository;
         private readonly MonthPlanManger _monthPlanManger;
+        private readonly IStaffUserRepository _staffUserRepository;
 
         public MonthPlansService(IMonthPlanRepository monthPlanRepository,
-            MonthPlanManger monthPlanManger)
+            MonthPlanManger monthPlanManger,
+            IStaffUserRepository staffUserRepository
+            )
         {
             _monthPlanRepository = monthPlanRepository;
-              _monthPlanManger = monthPlanManger;
+            _monthPlanManger = monthPlanManger;
+            _staffUserRepository = staffUserRepository;
         }
         public async Task<MonthPlanDto> CreateMonPlan(CreateMonthPlanDto data)
         {
-           
+            var user = await _staffUserRepository.FindByNameAsync(data.StaffUserName);
             var MonthlPlan = _monthPlanManger.CreateAsync(data.WorkPlanContent, data.WorkPlanTransfer, data.ProposedCompletionTime, data.TaskScore,
-                data.ProposedGoal, data.Year, data.Month, data.Day,data.ActualCompletion,data.TaskCompletionRate
-                ,data.ActualCompletionTime,data.SelfRating,data.AchievementOfSuperiorReviewGoals,data.SuperiorScore);
-            MonthlPlan.StaffUserId = Guid.Parse("405e0d17-de0f-bb49-25e3-39fa917cc375");
+          data.ProposedGoal, /*data.Year, data.Month, data.Day,*/data.ActualCompletion, data.TaskCompletionRate
+          , data.ActualCompletionTime, data.SelfRating, data.AchievementOfSuperiorReviewGoals, data.SuperiorScore);
+
+            MonthlPlan.StaffUserId = user.Id;
             await _monthPlanRepository.InsertAsync(MonthlPlan);
             return ObjectMapper.Map<MonthlPlan, MonthPlanDto>(MonthlPlan);
         }
@@ -35,20 +41,20 @@ namespace Acme.BookStore.MonthPlans
         {
             if (data.Sorting.IsNullOrWhiteSpace())
             {
-                 data.Sorting = nameof(MonthlPlan.WorkPlanContent);
+                data.Sorting = nameof(MonthlPlan.WorkPlanContent);
             }
-            var monthplans =await  _monthPlanRepository.GetListAsync(
+            var monthplans = await _monthPlanRepository.GetListAsync(
                  data.SkipCount,
                  data.MaxResultCount,
                  data.Sorting
                 );
 
             // var monthplans= await _monthPlanRepository.GetListAsync();
-             var Count = await _monthPlanRepository.GetCountAsync();
+            var Count = await _monthPlanRepository.GetCountAsync();
             //var test = ObjectMapper.Map<MonthlPlan, MonthPlanDto>(monthplans.FirstOrDefault());
             // var Count = await AsyncExecuter.CountAsync();
-            var demo =ObjectMapper.Map<List<MonthlPlan>,List<MonthPlanDto>>(monthplans.ToList());
-            return new PagedResultDto<MonthPlanDto>(Count,demo);
+            var demo = ObjectMapper.Map<List<MonthlPlan>, List<MonthPlanDto>>(monthplans.ToList());
+            return new PagedResultDto<MonthPlanDto>(Count, demo);
 
             // ObjectMapper.Map<List<MonthlPlan>, List<MonthPlanDto>>(monthplans);
         }
